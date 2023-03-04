@@ -1,0 +1,703 @@
+@import '_reset.scss';
+@import '_variables.scss';
+
+@mixin flex ($display: flex, $just_cont: space-between, $align_items: center) {
+    display: $display;
+    // flex-direction: $direction;
+    justify-content: $just_cont;
+    align-items: $align_items;
+}
+
+.first-page {
+    background: linear-gradient(90.26deg, #7D604B 0.23%, #251000 99.8%);
+    padding-top: 60px;
+
+    .header {
+        padding: 60px 0;
+    }
+    
+    .flex-wrapper {
+       @include flex;
+    }
+        .logo {
+            font-family: Georgia;
+            font-size: 32px;
+            font-weight: 400;
+            text-decoration: none;
+            color: #F1CDB3;
+            letter-spacing: 0.06em;
+            margin-bottom: 15px;
+        }
+
+        .slogan {
+            font-size: 13px;
+            font-family: $p_font;
+            font-weight: 400;
+            color: white;
+            letter-spacing: 0.1em;
+        }
+
+        nav a {
+            text-align: center;
+             font-weight: 400;
+             font-size: 15px;
+             font-family: Arial;
+             text-decoration: none;
+             color: #FAFAFA;
+             padding-bottom: 4px;
+             width: 114px;
+         }
+
+        ul{
+            display: flex;
+            flex-wrap: wrap;
+
+            .active {
+                border-bottom: #F1CDB3 solid 3px;
+            }
+        }
+        .burger-icon{
+            display: none;
+            }
+    }
+    .puppy {
+        margin-top: 60px;
+
+        .puppy-container{
+            @include flex (flex, space-between, none);
+
+            .info {
+                align-self: center;
+                max-width: 460px;
+                width: 38%;
+            }
+
+            .puppyimg {
+                max-width: 698px;
+                width: 58%;
+                animation-name: move-left;
+                animation-duration: 1s;
+            }
+
+            .heading1 {
+            font-family: Georgia;
+            color: #FFFFFF;
+            font-weight: 400;
+            font-size: 44px;
+            line-height: 130%;
+            max-width: 325px;
+            letter-spacing: 0.06em;
+            }
+            .offer {
+                color: #CDCDCD;
+                font-family: $p_font;
+                font-weight: 400;
+                font-size: 15px;
+                max-width: 460px;
+                margin-top: 42px;
+                line-height: 160%;
+            }
+        }
+        .button {
+            background-color: $orange_buttons;
+            font-family: Georgia;
+            font-weight: 400;
+            font-size: 17px;
+            letter-spacing: 6%;
+            border-radius: 100px;
+            padding: 15px 45px;
+            color: #292929;
+            border: none;
+            gap: 10px;
+            margin-top: 41px;
+            width: 207px;
+            cursor:pointer;
+            transition: background-color 0.3s ease-out;
+
+            .button:hover{
+                background-color: #947d6c;
+            }
+        }
+    }
+
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.second-page {
+    background: #FFFFFF;
+    padding-top: 80px;
+    padding-bottom: 100px;
+
+    .second{
+    @include flex;
+        max-width: 856px;
+
+        .about-pets {
+            /* margin-left: 175px; */
+            max-width: 300px;
+            width: 35%;
+        }
+
+        .about-shelter {
+            max-width: 430px;
+            width:50%;
+            /* margin-right: 169px; */
+
+            .heading3-about {
+                color: $h3_black;
+                font-family: Georgia;
+                font-size: 35px;
+                font-weight: 400;
+                line-height: 45.5px;
+                letter-spacing: 6%;
+                max-width: 310px;
+            }
+            p {
+                font-size: 15px;
+                margin-top: 25px;
+                font-family: $p_font;
+                font-weight: 400;
+                line-height: 24px;
+                max-width: 430px;
+            }
+        }
+    }
+}
+
+.third-page {
+    background: #F6F6F6;
+    @include flex (flex, none, center); 
+    flex-direction: column;
+
+    .third-page h3 {
+        max-width: 400px;
+        text-align: center;
+        font-family: Georgia;
+        color: $h3_black;
+        font-weight: 400;
+        line-height: 45.5px;
+        font-size: 35px;
+        letter-spacing: 6%;
+        margin: 80px 440px 35px 440px;
+    }
+
+    .box{
+        @include flex;
+        flex-direction: row;
+
+       .cards {
+       @include flex (flex, space-between, none);
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 90px;
+
+            .card-1 {
+            @include flex (flex, none, center);   
+            flex-direction: column;
+            background: #FAFAFA;
+            }
+            img {
+            height: 270px;
+            width: 270px;
+            padding-bottom: 30px;
+            }
+            .button111 img{
+            max-width: 14px;
+            height: 6px;
+            background: #292929;
+            /* margin-right: 53px; */
+            }
+            .card-2 {
+                /* margin-left: 90px; */
+                @include flex (flex, none, center);  
+                flex-direction: column;
+                background: #FAFAFA;
+            }
+            .button222 img{
+            max-width: 14px;
+            height: 6px; 
+            background: #292929;
+            /* margin-left: 53px; */
+            }   
+            p {
+                padding-bottom: 30px;
+                font-family: Georgia;
+                font-size: $name_size;
+                line-height: 22.72px;
+                font-weight: 400;
+                letter-spacing: 6%;
+            }
+            .card-3 {
+                @include flex (flex, none, center);  
+                flex-direction: column;
+                background: #FAFAFA;
+            }
+        }
+    }
+    .cards button {
+        margin-bottom: 30px;
+        padding: 15px 45px 15px 45px;
+        color: #292929;
+        border: 2px solid #F1CDB3;
+        border-radius: 100px;
+        background-color: $white_buttons;
+        gap: 10px;
+        font-size: 17px;
+        font-family: Georgia;
+        font-weight: 400;
+        line-height: 22.1px;
+        letter-spacing: 6%;
+    }
+    .button111 { 
+        width: 52px;
+        height: 52px;
+        border: 2px solid #F1CDB3;
+        border-radius: 100px;
+        padding: 23px, 19px, 23px, 19px;
+        align-items: center;
+        margin-right: 22px;
+    }
+    
+    .button222 { 
+        width: 52px;
+        height: 52px;
+        border: 2px solid #F1CDB3;
+        border-radius: 100px;
+        padding: 23px, 19px, 23px, 19px;
+        align-items: center;
+        margin-left: 22px;
+    }
+    
+    .rest {
+        margin-top: 85px;
+        margin-bottom: 100px;
+        padding: 15px 45px 15px 45px;
+        color: #292929;
+        border: 2px solid #F1CDB3;
+        border-radius: 100px;
+        background-color: $orange_buttons;
+        gap: 10px;
+        font-size: 17px;
+        font-family: Georgia;
+        font-weight: 400;
+        line-height: 22.1px;
+        letter-spacing: 6%;
+    }
+}
+
+.forth-page {
+    background: #FFFFFF;
+    padding-bottom: 81px;
+
+    h3 {
+        width: 308px;
+        text-align: center;
+        font-family: Georgia;
+        color: $h3_black;
+        font-weight: 400;
+        line-height: 45.5px;
+        font-size: 35px;
+        letter-spacing: 6%;
+        margin-bottom: 60px;
+        margin-top: 97px;
+    }
+   img {
+        width: 82px;
+        height: 113px;
+    }
+    .forth{
+        @include flex (flex, none, center);  
+        flex-direction: column;
+        .list {
+            @include flex (flex, center, center);  
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 55px;
+            
+            p {
+                margin-top: 30px;
+                font-family: Georgia;
+                font-size: $name_size;
+                line-height: 22.72px;
+                font-weight: 400;
+                letter-spacing: 6%;
+            }
+        }
+        .list-item{
+            @include flex (flex, none, center); 
+            flex-direction: column;
+           width: 170px;
+        }
+    }
+}
+
+
+.fifth-page {
+    
+    padding-top: 80px;
+    padding-bottom: 100px;
+    background: #F6F6F6;
+
+    .fifth-container{
+        @include flex (flex, none, center);  
+        flex-direction: row;
+        max-width: 915px;
+        gap: 5px;
+
+        .donation-dog {
+            max-width: 505px ;
+            width: 55%;
+        }
+        .info-dog {
+            max-width: 380px;
+            width: 41%;
+            
+            .name-of-bank {
+                font-family: Georgia;
+                font-size: 15px;
+                line-height: 16.5px;
+                font-weight: 400;
+                letter-spacing: 6%;
+                color: #545454;
+                margin-bottom: 20px;
+            }
+        }
+        .info-dog button {
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 20px;
+            padding: 10px 15px;
+            color: #545454;
+            border-radius: 9px;
+            background-color: $orange_buttons;
+            gap: 10px;
+            font-size: 15px;
+            font-family: Georgia;
+            font-weight: 400;
+            line-height: 23px;
+            letter-spacing: 0.06em;
+            border: none;
+        }
+        .info-dog img {
+            width: 30px;
+            height: 23px;
+            margin-right: 15px;
+        }
+        .info-dog .caption{
+            font-family: $p_font;
+            font-weight: 400;
+            font-style: italic;
+            font-size: 12px;
+            line-height: 18px;
+            color: #B2B2B2;
+            max-width: 380px;
+            height: 72px;
+        }
+    }
+    h3 {
+        color: $h3_black;
+        font-family: Georgia;
+        font-size: 35px;
+        font-weight: 400;
+        line-height: 45.5px;
+        letter-spacing: 6%;
+    
+        max-width: 300px;
+        height: 90px;
+        margin-bottom: 20px;
+        
+    }
+}
+
+footer{
+    background: linear-gradient(90.26deg, #7D604B 0.23%, #251000 99.8%);
+    padding-top: 72px;
+
+    .footer-container{
+        @include flex (flex, space-between, none);  
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 5px;
+
+        .questions{
+            width: 278px;
+            height: 234px;
+
+            h3{
+                color: #FFFFFF;
+                font-family: Georgia;
+                font-size: 35px;
+                font-weight: 400;
+                line-height: 45.5px;
+                letter-spacing: 6%;
+                width: 278px;
+                height: 90px;
+                margin-bottom: 40px;
+            }
+            .email{
+                display: flex;
+                flex-direction: row;
+                margin-bottom: 40px;
+                width: 191px;
+                height: 23px;
+            }
+    
+            .telephone{
+                display: flex;
+                flex-direction: row; 
+            }
+           img{
+                height: 32px;
+            }
+            p{
+                color: #F1CDB3;
+                font-family: Georgia;
+                font-size: $name_size;
+                font-weight: 400;
+                line-height: 23px;
+                letter-spacing: 6%;
+                margin-left: 20px;  
+            }
+        }
+        .adress{
+            width: 302px;
+            height: 234px;
+
+           h3{
+                color: #FFFFFF;
+                font-family: Georgia;
+                font-size: 35px;
+                font-weight: 400;
+                line-height: 45.5px;
+                letter-spacing: 6%;
+                width: 270px;
+                height: 90px;
+                margin-bottom: 40px;
+            }
+            .first-adress{
+                display: flex;
+                flex-direction: row; 
+                margin-bottom: 40px;
+                width: 100%;
+                height: 46px;
+            }
+            .second-adress{
+                display: flex;
+                flex-direction: row;  
+                height: 23px;
+                width: 100%;
+            }
+            img{
+             height: 32px;
+            }
+            p{
+                color: #F1CDB3;
+                font-family: Georgia;
+                font-size: 20px;
+                font-weight: 400;
+                line-height: 23px;
+                letter-spacing: 6%;
+                margin-left: 20px;  
+                
+            }
+        }
+    }
+}
+@media screen and (max-width: 1200px) {
+    .container {
+      width: 95%;
+      /* padding: 0 40px; */
+    }
+    .info {
+      margin-bottom: 10px;
+    }
+  }
+  @media screen and (max-width: 1197px) {
+   .third-page .box .cards {
+      justify-content: center;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .puppy-container {
+      flex-direction: column;
+    }
+    .puppy .puppy-container .info {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      max-width: 460px;
+      width: 100%;
+      margin-bottom: 100px;
+    }
+    
+    .puppyimg {
+      align-self: flex-end;
+      max-width: 569px;
+      width: 100%;
+    }
+    header nav a {
+      margin-left: 35px;
+    }
+    .second {
+      flex-direction: column-reverse;
+    }
+    .second-page .second .about-shelter {
+      width: 100%;
+    }
+    .second-page .second .about-pets {
+      width: 100%;
+      margin-top: 80px;
+    }
+    .second-page .second .about-shelter .heading3-about {
+font-size: 25px;
+text-align: center;
+max-width: 230px;
+margin: 0 auto;
+    }
+    .fifth-page .fifth-container {
+      flex-direction: column-reverse;
+     
+    }
+    .fifth-page .fifth-container .info-dog {
+      width: 100%;
+    
+      align-items: center;
+    }
+    .fifth-page .fifth-container .donation-dog {
+      width: 100%;
+    }
+    footer .footer-container {
+      justify-content: center;
+    }
+    .footer-dog {
+      max-width: 300px;
+      margin-top: 65px;
+    }
+    .cards {
+      gap: 40px;
+    }
+    .card-3 {
+      display: none;
+    }
+    .fifth-page{
+      padding-top: 42px;
+      padding-bottom: 42px;
+     
+    }
+
+  }
+  @media screen and (max-width: 709px) {
+    .flex-wrapper {
+      flex-direction: column;
+    }
+    .first-page {
+      padding-top: 30px;
+    }
+    header nav {
+      margin-top: 15px;
+    }
+  }
+
+  
+
+  @media screen and (max-width: 428px) {
+    .first-page .flex-wrapper .burger-icon {
+      display: block;
+    }
+    header nav {
+      display: none;
+    }
+    .fifth-page .fifth-container .donation-dog {
+      max-width: 260px;
+      width: 100%;
+      margin-top: 43px;
+    }
+    .flex-wrapper {
+      flex-direction: row;
+    }
+    .about-pets {
+      max-width: 260px;
+    }
+    .footer-dog {
+      max-width: 260px;
+    }
+    .questions {
+      display: flex;
+      justify-content: none;
+      align-items: center;
+      flex-direction: column;
+    }
+    .card-2 {
+      display: none;
+    }
+    .adress {
+      display: flex;
+      justify-content: none;
+      align-items: center;
+      flex-direction: column;
+    }
+    .footer-container h3 {
+      font-size: 25px;
+      text-align: center;
+    }
+    .first-adress {
+      justify-content: center;
+    }
+    .email {
+      max-width: 251px;
+      justify-content: center;
+    }
+    .box {
+      display: flex;
+      justify-content: center;
+      align-items: none;
+      flex-direction: column;
+      position: relative;
+    }
+    .cards button {
+      margin-bottom: 102px;
+    }
+    .third-page .button111 {
+      position: absolute;
+      margin-right: 0;
+      bottom: -65px;
+      left: 45px;
+      order: 1;
+    }
+    .third-page .button222 {
+      position: absolute;
+      bottom: -65px;
+      right: 45px;
+      margin-left: 0;
+    }
+    .third-page h3 {
+      margin-right: 0;
+      margin-left: 0;
+      width: 100%;
+    }
+    .puppy .puppy-container .heading1{
+font-size: 25px;
+text-align: center;
+max-width: 230px;
+    }
+    .offer{
+        text-align: center;
+    }
+  }
+    .puppy .puppy-container .info {
+justify-content: center;
+  }
+  /* Animation */
+  @keyframes move-left {
+    0% {
+      transform: translateX(300px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 100%;
+    }
+  }/*# sourceMappingURL=style.css.map */
